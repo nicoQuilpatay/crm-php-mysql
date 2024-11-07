@@ -1,38 +1,16 @@
-<?php
-/*
 
-  ____          _____               _ _           _       
- |  _ \        |  __ \             (_) |         | |      
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___ 
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |        
-        |___/                               |___/         
-    
-____________________________________
-/ Si necesitas ayuda, contáctame en \
-\ https://parzibyte.me               /
- ------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-Creado por Parzibyte (https://parzibyte.me).
-------------------------------------------------------------------------------------------------
-            | IMPORTANTE |
-Si vas a borrar este encabezado, considera:
-Seguirme: https://parzibyte.me/blog/sigueme/
-Y compartir mi blog con tus amigos
-También tengo canal de YouTube: https://www.youtube.com/channel/UCroP4BTWjfM0CkGB6AFUoBg?sub_confirmation=1
-Twitter: https://twitter.com/parzibyte
-Facebook: https://facebook.com/parzibyte.fanpage
-Instagram: https://instagram.com/parzibyte
-Hacer una donación vía PayPal: https://paypal.me/LuisCabreraBenito
-------------------------------------------------------------------------------------------------
-*/ ?>
 <?php
+require 'funciones.php'; // Asegúrate de que la ruta a config.php sea correcta
+
+session_start(); // Iniciar la sesión
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+
+
+
 include_once "encabezado.php";
 include_once "funciones.php";
 if (!isset($_GET["busqueda"]) || empty($_GET["busqueda"])) {
@@ -41,6 +19,7 @@ if (!isset($_GET["busqueda"]) || empty($_GET["busqueda"])) {
     $clientes = buscarClientes($_GET["busqueda"]);
 }
 ?>
+
 <div class="row">
     <div class="col-12">
         <h1>Clientes</h1>
