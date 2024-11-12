@@ -23,7 +23,7 @@
 <body>
     <!-- Definición del menú -->
     <nav class="navbar navbar-expand-md navbar-dark bg-success fixed-top">
-        <a class="navbar-brand" href="https://parzibyte.me">CRM By Parzibyte</a>
+        <a class="navbar-brand" >Gestion de Ventas</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#miNavbar" aria-controls="miNavbar" aria-expanded="false" aria-label="Mostrar u ocultar menú">
             <span class="navbar-toggler-icon"></span>
         </button>

@@ -56,9 +56,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('./img/login\ background.jpg'); /* Ajusta la ruta y usa url() */
+    background-image: url('./img/login\ background.jpg'); 
     background-repeat: no-repeat;
-    background-size: cover; /* Para cubrir toda la pantalla */
+    background-size: cover; 
     background-position: center;
 }
 
@@ -119,19 +119,30 @@ body {
         form a:hover {
             text-decoration: underline;
         }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
     </style>
 </head>
 <body>
     
-    <form method="POST" action="">
-    <h2>Iniciar Sesión</h2>
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <input type="submit" value="Iniciar Sesión">
-    </form>
+
+<div class="login-container">
+        <form method="POST" action="">
+            <h2>Iniciar Sesión</h2>
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+    </div>
+
 </body>
 </html>
