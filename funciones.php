@@ -42,6 +42,24 @@ function obtenerClientes()
     $sentencia = $bd->query("SELECT id, nombre, edad, departamento, fecha_registro FROM clientes");
     return $sentencia->fetchAll();
 }
+function obtenerProductos()
+{
+    $bd = obtenerBD();
+    $sentencia = $bd->query("SELECT Nombre,ProveedorID,ProductoID FROM producto");
+    return $sentencia->fetchAll();
+}
+function obtenerProveedores()
+{
+    $bd = obtenerBD();
+    $sentencia = $bd->query("SELECT ProveedorID, Nombre FROM proveedor");
+    return $sentencia->fetchAll();
+}
+function obtenerClientesAdmin()
+{
+    $bd = obtenerBD();
+    $sentencia = $bd->query("SELECT id, username FROM users");
+    return $sentencia->fetchAll();
+}
 
 function buscarClientes($nombre)
 {
@@ -58,6 +76,24 @@ function eliminarCliente($id)
     $sentencia = $bd->prepare("DELETE FROM clientes WHERE id = ?");
     return $sentencia->execute([$id]);
 }
+function eliminarProducto($ProductoID)
+{
+    $bd = obtenerBD();
+    $sentencia = $bd->prepare("DELETE FROM producto WHERE ProductoID = ?");
+    return $sentencia->execute([$ProductoID]);
+}
+function eliminarProveedor($ProveedorID)
+{
+    $bd = obtenerBD();
+    $sentencia = $bd->prepare("DELETE FROM proveedor WHERE ProveedorID = ?");
+    return $sentencia->execute([$ProveedorID]);
+}
+function eliminarAdmin($id)
+{
+    $bd = obtenerBD();
+    $sentencia = $bd->prepare("DELETE FROM users WHERE id = ?");
+    return $sentencia->execute([$id]);
+}
 
 function obtenerClientePorId($id)
 {
@@ -66,6 +102,7 @@ function obtenerClientePorId($id)
     $sentencia->execute([$id]);
     return $sentencia->fetchObject();
 }
+
 function actualizarCliente($nombre, $edad, $departamento, $id)
 {
     $bd = obtenerBD();
@@ -78,6 +115,18 @@ function agregarVenta($idCliente, $monto, $fecha)
     $bd = obtenerBD();
     $sentencia = $bd->prepare("INSERT INTO ventas_clientes(id_cliente, monto, fecha) VALUES (?, ?, ?)");
     return $sentencia->execute([$idCliente, $monto, $fecha]);
+}
+function agregarProveedor($nombre)
+{
+    $bd = obtenerBD();
+    $sentencia = $bd->prepare("INSERT INTO proveedor(Nombre) VALUES (?)");
+    return $sentencia->execute([$nombre]);
+}
+function agregarProducto($Nombre,  $ProveedorID)
+{
+    $bd = obtenerBD();
+    $sentencia = $bd->prepare("INSERT INTO producto(Nombre, ProveedorID) VALUES (?, ?)");
+    return $sentencia->execute([$Nombre, $ProveedorID]);
 }
 
 function totalAcumuladoVentasPorCliente($idCliente)

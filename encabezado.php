@@ -18,12 +18,12 @@
         font-size: 1.2rem;
     }
     </style>
-</head>
+</head> 
 
 <body>
     <!-- Definición del menú -->
     <nav class="navbar navbar-expand-md navbar-dark bg-success fixed-top">
-        <a class="navbar-brand" >Gestion de Ventas</a>
+        <a class="navbar-brand">Gestion de Ventas</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#miNavbar" aria-controls="miNavbar" aria-expanded="false" aria-label="Mostrar u ocultar menú">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,19 +34,26 @@
                     <a class="nav-link" href="clientes.php"><span class="mdi mdi-account-multiple"></span> Clientes</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="gestionAdmin.php"><span class="mdi mdi-account-multiple"></span> Admin</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="ventas.php"><span class="mdi mdi-store"></span> Ventas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.php"><span class="mdi mdi-store"></span> Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="proveedor.php"><span class="mdi mdi-store"></span> Proveedor</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="dashboard.php"><span class="mdi mdi-desktop-mac-dashboard"></span> Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="logout.php"><span class="mdi mdi-information"></span> Cerrar Sesion</a>
-                </li>
+                
 
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="https://parzibyte.me#contacto"><span class="mdi mdi-handshake-outline"></span>Ayuda y soporte</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php"><span class="mdi mdi-information"></span> Cerrar Sesion</a>
                 </li>
             </ul>
         </div>
