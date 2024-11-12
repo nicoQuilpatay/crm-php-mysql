@@ -15,6 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ejecutar la consulta
     if ($stmt->execute()) {
         echo "Usuario creado exitosamente.";
+        header("Location: gestionAdmin.php");
+
     } else {
         echo "Error al crear el usuario: " . $stmt->error;
     }

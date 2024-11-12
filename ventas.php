@@ -11,6 +11,7 @@ if (!isset($_SESSION['username'])) {
 
 include_once "funciones.php";
 $clientes = obtenerClientes();
+$productos = obtenerProductos();
 
 ?>
 <div class="row">
@@ -22,6 +23,14 @@ $clientes = obtenerClientes();
                 <select required name="id_cliente" id="id_cliente" class="form-control">
                     <?php foreach ($clientes as $cliente) { ?>
                         <option value="<?php echo $cliente->id ?>"><?php echo $cliente->nombre ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id_producto">Producto</label>
+                <select required name="id_producto" id="id_producto" class="form-control">
+                    <?php foreach ($productos as $producto) { ?>
+                        <option value="<?php echo $producto->ProductoID ?>"><?php echo $producto->Nombre ?></option>
                     <?php } ?>
                 </select>
             </div>

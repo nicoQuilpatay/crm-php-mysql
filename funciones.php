@@ -42,6 +42,7 @@ function obtenerClientes()
     $sentencia = $bd->query("SELECT id, nombre, edad, departamento, fecha_registro FROM clientes");
     return $sentencia->fetchAll();
 }
+
 function obtenerProductos()
 {
     $bd = obtenerBD();
