@@ -86,8 +86,15 @@ function eliminarProducto($ProductoID)
 function eliminarProveedor($ProveedorID)
 {
     $bd = obtenerBD();
+    try {
     $sentencia = $bd->prepare("DELETE FROM proveedor WHERE ProveedorID = ?");
     return $sentencia->execute([$ProveedorID]);
+} catch (PDOException $e) {
+    if ($e->getCode() == '23000') { 
+        return "clave_foranea";
+    }
+    return false;
+}
 }
 function eliminarAdmin($id)
 {

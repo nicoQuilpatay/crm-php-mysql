@@ -1,18 +1,17 @@
 
 <?php
-require 'funciones.php'; // Asegúrate de que la ruta a config.php sea correcta
+require 'funciones.php'; 
 
-session_start(); // Iniciar la sesión
+session_start(); 
 
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
 
-
-
 include_once "encabezado.php";
 include_once "funciones.php";
+
 if (!isset($_GET["busqueda"]) || empty($_GET["busqueda"])) {
     $clientes = obtenerClientes();
 } else {
